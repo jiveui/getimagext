@@ -14,7 +14,7 @@
 	
 	<set name="tool" value="exe" unless="iphone"/>
 	<set name="tool" value="static_link" if="iphone"/>
-	
+
 	<set name="ARM_ARCH" value="-v7" if="HXCPP_ARMV7" />
 	<set name="ndll-tool" value="dll" unless="iphone"/>
 	<set name="ndll-tool" value="static_link" if="iphone"/>
@@ -26,7 +26,7 @@
 	<set name="sdl_static" value="1" unless="mobile"/>
 	<unset name="sdl_static" if="dynamic_sdl"/>
 	<set name="no_thirdparty_extras" value="1" if="dynamic_sdl"/>
-	
+
 	<set name="name_prefix" value="lib" if="iphone" />
 	<target id="NDLL" output="${name_prefix}iOSNative${name_extra}" tool="linker" toolid="${ndll-tool}">
 		<outdir name="../ndll/${BINDIR}" />

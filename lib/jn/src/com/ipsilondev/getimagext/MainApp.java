@@ -10,27 +10,19 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.ipsilondev.getimagext.IntentManagerZ;
 
-public class MainApp extends org.haxe.lime.GameActivity {
+public class MainApp  {
 	public static HaxeObject callback;
 	public static int typeActivity;
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	}
-	
 	public static String getAppDir(){
-		FManager fm = new FManager(getInstance().getContext());
+		FManager fm = new FManager(org.haxe.lime.GameActivity.getInstance().getContext());
 		return fm.getDir();
 	}
 	
 	public static void filesIntent(HaxeObject cb, int tp){
 		callback = cb;
-		typeActivity = tp;		
-	//	getInstance().startActivity(new Intent(getInstance().getContext(),IntentManagerZ.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-		getInstance().startActivityForResult(new Intent(getInstance().getContext(),IntentManagerZ.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK),1);
+		typeActivity = tp;
+		org.haxe.lime.GameActivity.getInstance().startActivityForResult(new Intent(org.haxe.lime.GameActivity.getInstance().getContext(), IntentManagerZ.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 1);
 	}
 	
 	
